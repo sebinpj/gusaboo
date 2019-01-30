@@ -55,11 +55,6 @@ gulp.task('copy', function () {
     return gulp.src('assets/js/*.js').pipe(gulp.dest('app/js', {
         overwrite: true
     }))
-    //  gulp.src('assets/*.html')
-    //     .pipe(htmlbeautify())
-    //     .pipe(gulp.dest('app', {
-    //         overwrite: true
-    //     }));
 })
 
 
@@ -68,7 +63,7 @@ gulp.task('clearCache', function () {
     cache.clearAll();
 });
 //this tasks compile all necesary files and creates a dump in app/ folder
-gulp.task('compile', ['clearCache','ejs-compile', 'sass', 'copy']);
+gulp.task('compile', ['clearCache','ejs-compile', 'copy','sass']);
 
 //this happens when you run gulp
 gulp.task('default', ['compile', 'serve']);
